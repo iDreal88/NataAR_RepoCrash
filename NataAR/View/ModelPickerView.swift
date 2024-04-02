@@ -10,9 +10,25 @@ import SwiftUI
 struct ModelPickerView: View {
     
     // MARK: - Properties
+    @EnvironmentObject var manager: DataManager
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(sortDescriptors: []) private var todos: FetchedResults<Todo>
 
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
+    @State private var isModalVisible = false
+    
+    let items = [
+        "biplane",
+        "drummer",
+        "fender",
+        "gramophone",
+        "retrotv",
+        "robot",
+        "teapot",
+        "wateringcan",
+        "wheelbarrow"
+    ]
     
     var models: [Model]
     
@@ -21,13 +37,13 @@ struct ModelPickerView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 30) {
-                ForEach(models, id: \.self) { model in
+                
+                ForEach(todos, id: \.self) { todo in
                     Button {
-                        print("Picked model: \(model.modelName)")
-                        selectedModel = model
+                        selectedModel = Model(modelName: todo.name!)
                         isPlacementEnabled = true
                     } label: {
-                        Image(uiImage: model.image)
+                        Image(uiImage: UIImage(named: todo.name!)!)
                             .resizable()
                             .frame(height: 80)
                             .aspectRatio(1/1, contentMode: .fit)
@@ -36,6 +52,17 @@ struct ModelPickerView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
+                
+                    Button(action: {
+                        isModalVisible.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                            .font(.title)
+                    }
+                    .sheet(isPresented: $isModalVisible) {
+                        ModalView(items: items, isModalVisible: $isModalVisible)
+                    }
+            
             }
         }
         .padding(20)

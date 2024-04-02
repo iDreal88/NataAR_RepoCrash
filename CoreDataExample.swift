@@ -2,7 +2,7 @@
 //  CoreDataExample.swift
 //  NataAR
 //
-//  Created by Denny Chandra Wijaya on 03/04/24.
+//  Created by Oey Darryl Valencio Wijaya on 29/03/24.
 //
 
 import SwiftUI

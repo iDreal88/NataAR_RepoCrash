@@ -2,7 +2,7 @@
 //  Todo+CoreDataProperties.swift
 //  NataAR
 //
-//  Created by Denny Chandra Wijaya on 03/04/24.
+//  Created by Oey Darryl Valencio Wijaya on 29/03/24.
 //
 //
 
@@ -16,7 +16,7 @@ extension Todo {
         return NSFetchRequest<Todo>(entityName: "Todo")
     }
 
-    @NSManaged public var name: NSObject?
+    @NSManaged public var name: String?
 
 }
 

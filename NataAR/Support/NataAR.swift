@@ -11,10 +11,13 @@ import SwiftUI
 struct NataAR: App {
 
     // MARK: - Properties
+    @StateObject private var manager: DataManager = DataManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(manager)
+                .environment(\.managedObjectContext, manager.container.viewContext)
         }
     }
 }

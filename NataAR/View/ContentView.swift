@@ -10,11 +10,15 @@ import SwiftUI
 struct ContentView: View {
 
     // MARK: - Properties
+    @EnvironmentObject var manager: DataManager
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(sortDescriptors: []) private var todos: FetchedResults<Todo>
 
     @State private var isPlacementEnabled = false
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     @State private var shouldRemoveAllModels = false
+    @State private var isModalVisible = false
 
     private var models: [Model] = {
         let fileManager = FileManager.default
@@ -31,6 +35,7 @@ struct ContentView: View {
     // MARK: Body
     
     var body: some View {
+        
         ZStack(alignment: .top) {
             Button(role: .destructive) {
                 shouldRemoveAllModels = true
@@ -38,9 +43,22 @@ struct ContentView: View {
                 HStack {
                     Image(systemName: "trash")
                     Text("Remove All")
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        isModalVisible.toggle()
+                    }) {
+                        Image(systemName: "minus")
+                        Text("Remove Items")
+                    }
+                    .sheet(isPresented: $isModalVisible) {
+                        ModalViewRemove(isModalVisible: $isModalVisible)
+                    }
                 }
             }
         }
+        .padding()
 
         ZStack(alignment: .bottom) {
             ARViewRepresentable(
