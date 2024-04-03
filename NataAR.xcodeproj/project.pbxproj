@@ -26,7 +26,7 @@
 		07EF081424CB675200556F10 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF081324CB675200556F10 /* Model.swift */; };
 		07EF081724CB6F0D00556F10 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 07EF081624CB6F0D00556F10 /* FocusEntity */; };
 		07EF081924CB6F4400556F10 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF081824CB6F4400556F10 /* CustomARView.swift */; };
-		77CBBB8C2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBB8A2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodeld */; };
+		77CBBB8C2BBC9B73003F7EC2 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBB8A2BBC9B73003F7EC2 /* CoreData.xcdatamodeld */; };
 		77CBBB8F2BBC9B91003F7EC2 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBB8D2BBC9B91003F7EC2 /* Todo+CoreDataClass.swift */; };
 		77CBBB902BBC9B91003F7EC2 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBB8E2BBC9B91003F7EC2 /* Todo+CoreDataProperties.swift */; };
 		77CBBB922BBC9BA7003F7EC2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBBB912BBC9BA7003F7EC2 /* DataManager.swift */; };
@@ -80,7 +80,7 @@
 			children = (
 				77CBBB8D2BBC9B91003F7EC2 /* Todo+CoreDataClass.swift */,
 				77CBBB8E2BBC9B91003F7EC2 /* Todo+CoreDataProperties.swift */,
-				77CBBB8A2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodeld */,
+				77CBBB8A2BBC9B73003F7EC2 /* CoreData.xcdatamodeld */,
 				07D53AE824CB177B00195440 /* NataAR */,
 				07D53AE724CB177B00195440 /* Products */,
 			);
@@ -251,7 +251,7 @@
 				07D53AEC24CB177B00195440 /* ContentView.swift in Sources */,
 				07D53AEA24CB177B00195440 /* NataAR.swift in Sources */,
 				07EF081024CB229D00556F10 /* ModelPickerView.swift in Sources */,
-				77CBBB8C2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodeld in Sources */,
+				77CBBB8C2BBC9B73003F7EC2 /* CoreData.xcdatamodeld in Sources */,
 				07EF081424CB675200556F10 /* Model.swift in Sources */,
 				77CBBB972BBCAACC003F7EC2 /* ModalViewRemove.swift in Sources */,
 				77CBBB8F2BBC9B91003F7EC2 /* Todo+CoreDataClass.swift in Sources */,
@@ -472,13 +472,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		77CBBB8A2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodeld */ = {
+		77CBBB8A2BBC9B73003F7EC2 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				77CBBB8B2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodel */,
 			);
 			currentVersion = 77CBBB8B2BBC9B73003F7EC2 /* CoreDataExample.xcdatamodel */;
-			path = CoreDataExample.xcdatamodeld;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

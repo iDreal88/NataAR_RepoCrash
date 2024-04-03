@@ -15,7 +15,7 @@ class DataManager: NSObject, ObservableObject {
     @Published var todos: [Todo] = [Todo]()
     
     /// Add the Core Data container with the model name
-    let container: NSPersistentContainer = NSPersistentContainer(name: "CoreDataExample")
+    let container: NSPersistentContainer = NSPersistentContainer(name: "CoreData")
     
     /// Default init method. Load the Core Data container
     override init() {
