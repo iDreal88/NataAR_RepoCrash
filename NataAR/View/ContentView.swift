@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var modelConfirmedForPlacement: Model?
     @State private var shouldRemoveAllModels = false
     @State private var isModalVisible = false
+    @State private var isLightingDark = false
     
     private var models: [Model] = {
         let fileManager = FileManager.default
@@ -50,6 +51,15 @@ struct ContentView: View {
                         NavigationLink(destination: ObjectView()) {
                             Text("Open Object Capture")
                         }
+                        .padding(.trailing,10)
+                        
+                        Button(action: {
+                            // Toggle the lighting mode
+                            isLightingDark.toggle()
+                        }, label: {
+                            Text("Toggle Lighting")
+                        })
+                        .padding()
                         
                         Spacer()
                         
@@ -70,7 +80,8 @@ struct ContentView: View {
             ZStack(alignment: .bottom) {
                 ARViewRepresentable(
                     modelConfirmedForPlacement: $modelConfirmedForPlacement,
-                    shouldRemoveAllModels: $shouldRemoveAllModels
+                    shouldRemoveAllModels: $shouldRemoveAllModels,
+                    isLightingDark: $isLightingDark
                 )
                 
                 if isPlacementEnabled {
