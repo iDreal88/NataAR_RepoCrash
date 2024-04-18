@@ -19,6 +19,10 @@ struct ContentView: View {
     @State private var modelConfirmedForPlacement: Model?
     @State private var shouldRemoveAllModels = false
     @State private var isModalVisible = false
+    @State private var isMetalic = false
+    @State private var isColorRed = false
+    @State private var isColorOrange = false
+    @State private var isColorCyan = false
     
     private var models: [Model] = {
         let fileManager = FileManager.default
@@ -50,6 +54,41 @@ struct ContentView: View {
                         NavigationLink(destination: ObjectView()) {
                             Text("Open Object Capture")
                         }
+                        .padding(.trailing,10)
+                        
+                        Button(action: {
+                            isMetalic.toggle()
+                        }, label: {
+                            Text("Toggle Metalic")
+                        })
+                        .padding()
+                        
+                        Button(action: {
+                            isColorRed.toggle()
+                            isColorOrange = false
+                            isColorCyan = false
+                        }, label: {
+                            Text("Red")
+                        })
+                        .padding()
+                        
+                        Button(action: {
+                            isColorOrange.toggle()
+                            isColorRed = false
+                            isColorCyan = false
+                        }, label: {
+                            Text("Orange")
+                        })
+                        .padding()
+                        
+                        Button(action: {
+                            isColorCyan.toggle()
+                            isColorRed = false
+                            isColorOrange = false
+                        }, label: {
+                            Text("Cyan")
+                        })
+                        .padding()
                         
                         Spacer()
                         
@@ -70,7 +109,11 @@ struct ContentView: View {
             ZStack(alignment: .bottom) {
                 ARViewRepresentable(
                     modelConfirmedForPlacement: $modelConfirmedForPlacement,
-                    shouldRemoveAllModels: $shouldRemoveAllModels
+                    shouldRemoveAllModels: $shouldRemoveAllModels,
+                    isMetalic: $isMetalic,
+                    isColorRed : $isColorRed,
+                    isColorOrange: $isColorOrange,
+                    isColorCyan : $isColorCyan
                 )
                 
                 if isPlacementEnabled {
