@@ -91,7 +91,7 @@ class AppDataModel: ObservableObject, Identifiable {
     }
 
     // Leaves the model state in ready.
-     private init() {
+      init() {
         state = .ready
     }
 

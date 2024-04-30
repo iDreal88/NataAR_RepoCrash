@@ -26,8 +26,10 @@ class Model {
     ]
 
     var modelName: String
-    var image: UIImage
+    var image: UIImage?
     var modelEntity: ModelEntity?
+    var isMetallic: Bool
+    var color: Color
 
     private var cancellable: AnyCancellable? = nil
 
@@ -35,7 +37,10 @@ class Model {
 
     init(modelName: String) {
         self.modelName = modelName
-        self.image = UIImage(named: modelName)!
+        self.image = UIImage(named: modelName)
+        self.isMetallic = false
+        self.color = Color.white
+         
 
         let filename = modelName + ".usdz"
         self.cancellable = ModelEntity.loadModelAsync(named: filename)

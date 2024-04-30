@@ -14,6 +14,7 @@ struct PlacementButtonView: View {
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
+    @Binding var showedObjects: [Model]
     
     // MARK: Body.
     
@@ -34,6 +35,7 @@ struct PlacementButtonView: View {
             Button {
                 print("Confirm button tapped")
                 modelConfirmedForPlacement = selectedModel
+                showedObjects.append((selectedModel!))
                 resetPlacementParameters()
             } label: {
                 Image(systemName: "checkmark")
@@ -65,7 +67,8 @@ struct PlacementButtonView_Previews: PreviewProvider {
         PlacementButtonView(
             isPlacementEnabled: .constant(false),
             selectedModel: .constant(nil),
-            modelConfirmedForPlacement: .constant(nil)
+            modelConfirmedForPlacement: .constant(nil),
+            showedObjects: .constant([])
         )
     }
 }

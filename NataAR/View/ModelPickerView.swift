@@ -13,22 +13,9 @@ struct ModelPickerView: View {
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(sortDescriptors: []) private var todos: FetchedResults<Todo>
-
+    
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
-    @State private var isModalVisible = false
-    
-    let items = [
-        "biplane",
-        "drummer",
-        "fender",
-        "gramophone",
-        "retrotv",
-        "robot",
-        "teapot",
-        "wateringcan",
-        "wheelbarrow"
-    ]
     
     var models: [Model]
     
@@ -37,7 +24,6 @@ struct ModelPickerView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 30) {
-                
                 ForEach(todos, id: \.self) { todo in
                     Button {
                         selectedModel = Model(modelName: todo.name!)
@@ -53,16 +39,6 @@ struct ModelPickerView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
                 
-                    Button(action: {
-                        isModalVisible.toggle()
-                    }) {
-                        Image(systemName: "plus")
-                            .font(.title)
-                    }
-                    .sheet(isPresented: $isModalVisible) {
-                        ModalView(items: items, isModalVisible: $isModalVisible)
-                    }
-            
             }
         }
         .padding(20)

@@ -26,6 +26,7 @@
 		07EF081424CB675200556F10 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF081324CB675200556F10 /* Model.swift */; };
 		07EF081724CB6F0D00556F10 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 07EF081624CB6F0D00556F10 /* FocusEntity */; };
 		07EF081924CB6F4400556F10 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF081824CB6F4400556F10 /* CustomARView.swift */; };
+		7704DB532BDEB7A40082295D /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704DB522BDEB7A40082295D /* SideBarView.swift */; };
 		77BEBF1F2BC593DE00B90362 /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEBF1E2BC593DE00B90362 /* AppDataModel.swift */; };
 		77BEBF222BC593F700B90362 /* AppDataModel+Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEBF212BC593F700B90362 /* AppDataModel+Orbit.swift */; };
 		77BEBF242BC5940500B90362 /* AppDataModel+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEBF232BC5940500B90362 /* AppDataModel+State.swift */; };
@@ -92,6 +93,7 @@
 		07EF081124CB33CA00556F10 /* PlacementButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementButtonView.swift; sourceTree = "<group>"; };
 		07EF081324CB675200556F10 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		07EF081824CB6F4400556F10 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		7704DB522BDEB7A40082295D /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		77BEBF1E2BC593DE00B90362 /* AppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 		77BEBF212BC593F700B90362 /* AppDataModel+Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDataModel+Orbit.swift"; sourceTree = "<group>"; };
 		77BEBF232BC5940500B90362 /* AppDataModel+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDataModel+State.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				07EF081124CB33CA00556F10 /* PlacementButtonView.swift */,
 				77CBBB942BBCA433003F7EC2 /* ModalView.swift */,
 				77CBBB962BBCAACC003F7EC2 /* ModalViewRemove.swift */,
+				7704DB522BDEB7A40082295D /* SideBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				77BEBF342BC5947700B90362 /* FeedbackView.swift in Sources */,
 				77BEBF2C2BC5943D00B90362 /* CaptureOverlayView+LocalizedString.swift in Sources */,
 				77BEBF322BC5946B00B90362 /* FeedbackMessages.swift in Sources */,
+				7704DB532BDEB7A40082295D /* SideBarView.swift in Sources */,
 				77CBBB972BBCAACC003F7EC2 /* ModalViewRemove.swift in Sources */,
 				77CBBB8F2BBC9B91003F7EC2 /* Todo+CoreDataClass.swift in Sources */,
 				77BEBF3C2BC594AC00B90362 /* OnboardingButtonView.swift in Sources */,
