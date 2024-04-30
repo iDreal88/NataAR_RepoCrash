@@ -46,6 +46,7 @@ struct ARViewRepresentable: UIViewRepresentable {
             let anchorEntity = AnchorEntity(plane: .any)
 //            modelEntity.name = "coba"
             anchorEntity.addChild(modelEntity)
+            anchorEntity.name = "Robot"
             uiView.scene.addAnchor(anchorEntity)
             
             DispatchQueue.main.async {
@@ -89,6 +90,29 @@ struct ARViewRepresentable: UIViewRepresentable {
 //                child.model?.materials = [newMaterial]
 //            }
             
+        }
+        
+        
+        if isColorRed {
+            if let modelEntity = uiView.scene.findEntity(named: "robot") as? ModelEntity{
+                
+                let redMaterial = SimpleMaterial(color: .red, isMetallic: isMetalic)
+                modelEntity.model?.materials = [redMaterial]
+            }
+        }
+        if isColorOrange {
+            if let modelEntity = uiView.scene.findEntity(named: "robot") as? ModelEntity{
+                
+                let orangeMaterial = SimpleMaterial(color: .orange, isMetallic: isMetalic)
+                modelEntity.model?.materials = [orangeMaterial]
+            }
+        }
+        if isColorCyan {
+            if let modelEntity = uiView.scene.findEntity(named: "robot") as? ModelEntity{
+                
+                let redMaterial = SimpleMaterial(color: .cyan, isMetallic: isMetalic)
+                modelEntity.model?.materials = [redMaterial]
+            }
         }
         
             if let modelEntity = uiView.scene.findEntity(named: selectedObject.modelName) as? ModelEntity{
